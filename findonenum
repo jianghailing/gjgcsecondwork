@@ -1,0 +1,143 @@
+package rjgcsecondwork;
+import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.NullPointerException;
+public class FindNum {
+	public static int[] FindOneNum(String str) {
+		int num[]= {0,0,0};
+		int i=0;
+		int m=0;
+		int k=0;
+		char charstr[]= {' '} ;
+		char ss[] = str.toCharArray();
+		int j=0;
+		boolean tap=true;
+		/*for(i=0;i<str.length();i++) {
+			if('0'<=ss[i] && ss[i] <= '9' ) {
+				charstr[j]=ss[i];
+				String s =String.copyValueOf(charstr);
+				num[m]=Integer.valueOf(s);
+				m++;
+			}	
+		}
+		*/
+		  String[] temp= str.split("\\'");
+		  System.out.println(temp[0]);
+		  
+		
+		return num;
+	}
+	public static void main(String[] args) throws IOException {	
+		  
+		  
+		  String str=" 35'2/3";
+		  int num1[]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};//用于将字符转化存放数字的整形数组
+		  int num2[]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};//把整形数组变成操作数
+		  int num3[]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+		  int num10[]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+		  int num4=0;
+		  int num[]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+		  char ss[] = str.toCharArray();
+		  for(int i=0;i<str.length();i++) {
+			  num1[i]=OneNum.oneNum(ss[i]);
+		  }
+		  boolean tap = true;
+		  boolean pat = true;
+		  int j=0;
+		  int number=0;
+		  //下面这个for循环的作用将非-1的数字存储在num2数组中
+		  for(int i=0;i<str.length();i++) {
+			  for(int m=0;m<10;m++) {
+				  num1[m]=-1;
+				  num2[m]=-1;
+				  num3[m]=-1;
+				  num10[m]=-1;
+				  num4=0;
+			  }
+			  if(tap==false && num1[i]!=-1) {
+				  num2[j]=num1[i];
+				  j++;
+				  tap=false;
+				  continue;
+			  }
+			  if(tap==true && num1[i]!=-1) {
+				  num2[j]=num1[i];
+				  j++;
+				  tap=false;
+				  continue;
+			  }
+			  if(tap==false && num1[i]==-1) {
+				  for(int m=0, n=0;m<10;m++) {
+					  if(num2[m]!=-1) {
+						  num3[n]=num2[m];
+						  n++;
+					  }
+				  }
+				  int temp10=0;
+				  for(int m=0;m<10;m++) {
+					  if(num3[m]==-1)
+						  temp10=m+1;
+					  break;  
+				  }
+				  for(int m=9,n=0;m!=-1;m--,n++) {
+					  num10[n]=num3[m];
+				  }
+				  for(int m=0,n=1;m<10;m++) {
+					  if(num10[m]==-1)
+						  break;
+					  if(num10[m]!=-1) {
+						  for(int k=0;k<m;k++) {
+							  n=n*10;
+						  }
+						  num4=num4+num10[m]*n;
+					  }
+				  }
+				  num[number]=num4;
+				  number++;
+			  }
+		  }
+		      for(int i=0;i<number+1;i++)
+			  System.out.println(num[i]);
+
+		 /* String[] temp= str.split("\\'");
+		  System.out.println(temp[0]);
+		  num[0]=Integer.valueOf(temp[0]);
+		  System.out.println(num[0]);
+		  String address="上海^上海市@闵行区#吴中路";
+		  String[] splitAddress=address.split("\\^|@|#");
+		  System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]); 
+		  
+		  num = FindNum.FindOneNum(str);
+		  System.out.println(num[0] + "' " + num[1] + "/" + num[2]);
+					String s1 = num[0]+"'"+num[1]+"/"+num[3];
+					System.out.print(s1);
+				*/	
+					
+					 /* String path = "C:\\Users\\14305\\source";
+					    String filename = "test.txt";
+					    File myFile = new File(path,filename);
+					    
+					    BufferedReader reader = new BufferedReader(new FileReader(myFile));
+					    String tempString = null;  
+					    int line = 1;  
+					    // 一次读入一行，直到读入null为文件结束  
+					    while ((tempString = reader.readLine()) != null) {  
+					        // 显示行号  
+					        System.out.println("line " + line + ": " + tempString);  
+					        line++;  
+					    }  
+					    reader.close();  
+					    
+					    BufferedWriter bw = new BufferedWriter(new FileWriter(myFile,true));
+					    bw.write("2");  
+					    bw.flush();  
+					    bw.close(); 
+					    */
+					    
+		 }
+}
