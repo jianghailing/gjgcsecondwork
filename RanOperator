@@ -1,0 +1,28 @@
+package rjgcsecondwork;
+import java.util.*;
+
+public class ranOperator {
+ public static char Operator() {
+  Random ra1 = new Random();
+  int temp = 1;
+  char a = ' ';
+  int b = -1;
+  temp = ra1.nextInt(4);
+  b = temp;
+  switch(b) { //生成运算符
+  case 0: a = '+';
+  break;
+  case 1: a = '-';
+  break;
+  case 2: a = 'x';
+  break;
+  case 3: a = '÷';
+  }
+  return a;
+ }
+ 
+ public static void main(String[] args) {
+  char temp = ranOperator.Operator();
+  System.out.println(temp);
+ }
+}
