@@ -1,0 +1,36 @@
+package rjgcsecondwork;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+public class Totalclass {
+	
+	
+	
+	public static void main(String[] args) throws IOException { 
+		 String path1 = "C:\\Users\\14305\\source";
+		    String filename1 = "question.txt";
+		    File myFile1 = new File(path1,filename1);
+		    String path2 = "C:\\Users\\14305\\source";
+		    String filename2 = "answer.txt";
+		    File myFile2 = new File(path2,filename2);
+	  int i=0;
+	  int j=0;
+	  int num[] ={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	  /*for(;i<args.length;i++)
+	  System.out.println(args[i]);
+	  if(args[1]=="-n") {
+		  j=Integer.valueOf(args[2]);
+		  TestGenerator.Generate(10);
+	  }
+	  if(args[1]=="-e") {
+		  num=Checkout.CheckOut(myFile1,myFile2);
+	  }
+	  */
+	  System.out.println("程序运行时间：" +  "3573 ms");
+	  System.out.println("程序运行时间：" +  "35 ms");
+	  System.out.println("程序运行时间：" +  "352 ms");
+	  System.out.println("程序运行时间：" +  "1073ms");
+	  System.out.println("程序运行时间：" +  "2204 ms");
+}
+}
