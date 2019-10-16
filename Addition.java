@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Addition {
  
- public static int[] Add(int num1[], int num2[]){
+ public static int[] Add(int num1[], int num2[]){   
   int a[] = {1, 1};
   int b[] = {1, 1};
   int c[] = {2, 1};
@@ -30,7 +30,7 @@ public class Addition {
   d[1] = c[0] % c[1];
   d[2] = c[1];
   return d;
- }
+ }  
  
 
  
@@ -42,5 +42,5 @@ public class Addition {
   System.out.println(nume1[0] + "' " + nume1[1] + "/" + nume1[2] + " + " + nume2[0] + "' " + nume2[1] + "/" + nume2[2] + " =");
   
    System.out.println(nume3[0] + "' " + nume3[1] + "/" + nume3[2]);
- }
+   } 
 }
